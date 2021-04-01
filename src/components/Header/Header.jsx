@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./Header.css";
-
+import { Link } from "react-router-dom"
 
 const Header = (props) => {
     const [screen, setscreen] = useState({
@@ -41,12 +41,13 @@ const Header = (props) => {
                 </div>
                 <nav className="navegationarea">
                     <ul>
-                        <li><a href="/home"> <i className="fas fa-home navicon"></i> Home</a></li>
-                        <li><a href="/home"><i className="fas fa-dog navicon"></i> Animals</a></li>
-                        <li><a href="/home"><i className="fas fa-car navicon"></i> Cars</a></li>
-                        <li><a href="/home"><i className="fas fa-paw navicon"></i>Pugs </a></li>
-                        <li><a href="/home"><i className="fas fa-globe-americas navicon"></i> Others </a></li>
-
+                        
+                        <li><Link to={"/home"}> <i className="fas fa-home navicon"></i> Home</Link></li>
+                         <li> <Link to={"/animals"}><i className="fas fa-dog navicon"></i> Animals</Link></li> 
+                        <li><Link to={"/cars"}><i className="fas fa-car navicon"></i> Cars</Link></li>
+                        <li><Link to={"/pugs"}><i className="fas fa-paw navicon"></i>Pugs </Link></li>
+                        <li><Link to={"/others"}><i className="fas fa-globe-americas navicon"></i> Others </Link></li>
+                    
                     </ul>
 
 
@@ -68,11 +69,11 @@ const Header = (props) => {
                 </div>
                 <nav className="navegationareaclose">
                     <ul>
-                        <li><a href="/home"> <i className="fas fa-home navicon"></i> </a></li>
-                        <li><a href="/home"><i className="fas fa-dog navicon"></i> </a></li>
-                        <li><a href="/home"><i className="fas fa-car navicon"></i> </a></li>
-                        <li><a href="/home"><i className="fas fa-paw navicon"></i> </a></li>
-                        <li><a href="/home"><i className="fas fa-globe-americas navicon"></i></a></li>
+                        <li><Link to={"/home"}> <i className="fas fa-home navicon"></i> </Link></li>
+                        <li><Link to={"/animals"}><i className="fas fa-dog navicon"></i> </Link></li>
+                        <li><Link to={"/cars"}><i className="fas fa-car navicon"></i> </Link></li>
+                        <li><Link to={"/pugs"}><i className="fas fa-paw navicon"></i> </Link></li>
+                        <li><Link to={"/Others"}><i className="fas fa-globe-americas navicon"></i></Link></li>
                     </ul>
                 </nav>
             </section>

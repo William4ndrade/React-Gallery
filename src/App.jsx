@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Header from "./components/Header/Header"
-import Photo from "./components/photos/photo"
+import Routes from './Routes/Router';
 
 
 function App() {
@@ -17,8 +18,10 @@ function App() {
 
   return (
     <>
+      <BrowserRouter>
       <Header OpenOrclose={OpenOrClose} />
-      <Photo HeaderOpen={headerstate} title='Pugs' query="pug"/>
+      <Routes HeaderOpen={headerstate}/>
+      </BrowserRouter>
     </>
   );
 }

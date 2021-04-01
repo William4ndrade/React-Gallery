@@ -54,6 +54,7 @@ const Photos = ( {query, title, HeaderOpen }    ) => {
         <div className="contatiner-gallery" style={
           HeaderOpen ? {width: "80%", left: "18%"} : {width: "80%", left: "8%"}
         }>
+         {console.log(HeaderOpen)} 
            <h1 className="title"> <i className="fas fa-grip-lines-vertical"></i> {title}</h1>
             {
               Posts.length > 0  ? 
