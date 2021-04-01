@@ -1,0 +1,121 @@
+header.headerpage{
+    height: 100%;
+    background-color: rgb(3, 3, 3);
+    width: 18%;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+header.headerpageclose{
+    height: 100%;
+    background-color: rgb(3, 3, 3);
+    width: 8%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+div.brandbar{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+div.brandbarclose{
+    display: flex;
+    width: 93%;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+i.fa-bars{
+    padding: 10px;
+    font-size: 29px;
+    cursor: pointer;
+}
+
+i.fa-bars:hover{
+    padding: 10px;
+    font-size: 29px;
+    color: white;
+}
+
+i.fa-grip-lines-vertical, i.fa-bars{
+    color: rgb(216, 161, 11);
+    margin: 5px; 
+}
+
+h2.brandname{
+    color: rgb(255, 255, 255);
+    margin: 7px;
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+nav.navegationarea{
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    margin: 30px 0px;
+}
+
+nav.navegationarea > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px 60px;
+
+}
+
+nav.navegationarea > ul > li > a{
+    font-size: 20px;
+    color: rgb(129, 129, 129);
+
+
+}
+
+nav.navegationarea > ul > li{
+    padding: 10px 0px;
+}
+
+nav.navegationareaclose > ul > li{
+    padding: 10px 0px;
+}
+
+nav.navegationareaclose > ul > li > a{
+    font-size: 29px;
+    color: white;
+}
+
+
+nav.navegationarea > ul > li > a:hover{
+    color: rgb(216, 161, 11);
+}
+
+nav.navegationareaclose > ul > li > a:hover{
+    color: rgb(216, 161, 11);
+   
+}
+
+i.navicon{
+    padding: 0px 8px;
+}
+
+footer > p {
+    color: rgb(78, 78, 78);
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+
+}
