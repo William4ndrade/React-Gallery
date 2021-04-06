@@ -25,4 +25,5 @@ yarn-error.log*
 
 #configs
 
-src/configs 
+.env.development
+.env.production

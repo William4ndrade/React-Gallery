@@ -1,4 +1,4 @@
-// import configsForAPI from "../configs/config" ;
+
 
 
 
@@ -15,7 +15,7 @@ const GetPhotosbyquery = async (query, per_page = 20 ) => {
     }
 
     const value = order_by[sortNumber]
-    const url = `${process.env.API_URL}&query=${query}&per_page=${per_page}&order_by=${order_by}` ;
+    const url = `${process.env.REACT_APP_HOST}&query=${query}&per_page=${per_page}&order_by=${order_by}` ;
     const Response = await fetch(url);
     const Json = await Response.json();
     return Json;
