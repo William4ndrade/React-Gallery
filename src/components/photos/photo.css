@@ -40,13 +40,13 @@ div.images:hover::after{
     font-weight: 700;
     position: relative;
     height: 40%;
-    width: 100%;
+    max-width: 100%;
     background-color: rgba(15, 15, 15, 0.877);
     font-family: 9px;
     overflow: auto;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(219, 219, 219);
-    padding: 5px;
+     padding: 5px; 
     border-radius: 0px 0px 5px 5px;
 }
 

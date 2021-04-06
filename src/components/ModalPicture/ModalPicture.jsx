@@ -55,7 +55,7 @@ const ModalPicture = ({src, title, tags = [], description, isOpen, ChangeModalSt
         <>
             <Modal ariaHideApp={false} onRequestClose={() => SetModalOpen(false)} preventScroll={true} isOpen={ModalOpen} style={customStyles}  >
                 <div className="picture">
-                    <img draggable="false" className="pictureimg" src={src} />
+                    <img alt="" draggable="false" className="pictureimg" src={src} />
                     <i onClick={() => SetModalOpen(false)} class="fas fa-times-circle closeicon"></i>
                 </div>
                 <div className="content">
@@ -73,7 +73,7 @@ const ModalPicture = ({src, title, tags = [], description, isOpen, ChangeModalSt
                        </div>
                         </>
                     }</div>) : ""}
-                    <a target="_blank" className="downloadbutton" href={src}><i class="fas fa-arrow-circle-down"></i></a>
+                    <a rel="noreferrer" target="_blank" className="downloadbutton" href={src}><i class="fas fa-arrow-circle-down"></i></a>
              
                 </div>
 

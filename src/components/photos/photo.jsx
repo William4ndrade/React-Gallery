@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import "./photo.css";
 import "../../services/GalleryApi";
 import GetPhotosbyquery from '../../services/GalleryApi';
-import MolalPicture from "../ModalPicture/ModalPicture"
 import ModalPicture from '../ModalPicture/ModalPicture';
 
 
@@ -103,7 +102,7 @@ const Photos = ( {query, title, HeaderOpen, search = false }    ) => {
                        
                  return (
                   <div onClick={() => OpenModal(title, e.url, e.description, e.tags)} description={"Description: "  +  (e.description ? e.description : "Sem detalhes no momento")} key={i} id={i} className="images">
-                    <img  draggable={false} className="imagesgallery" key={i} src={e.url}  />
+                    <img  alt="" draggable={false} className="imagesgallery" key={i} src={e.url}  />
                   </div>
                  )
 
