@@ -15,7 +15,7 @@ const GetPhotosbyquery = async (query, per_page = 20 ) => {
     }
 
     const value = order_by[sortNumber]
-    const url = `${configsForAPI.baseUrl}&query=${query}&per_page=${per_page}&order_by=${order_by}` ;
+    const url = `${process.env.API_URL || configsForAPI.baseUrl}&query=${query}&per_page=${per_page}&order_by=${order_by}` ;
     const Response = await fetch(url);
     const Json = await Response.json();
     return Json;
