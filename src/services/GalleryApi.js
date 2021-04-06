@@ -1,4 +1,4 @@
-import configsForAPI from "../configs/config";
+// import configsForAPI from "../configs/config";
 
 
 
