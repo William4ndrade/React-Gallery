@@ -25,4 +25,4 @@ yarn-error.log*
 
 #configs
 
-/src/configs 
+src/configs 
