@@ -46,6 +46,7 @@ const Header = (props) => {
                          <li> <Link to={"/animals"}><i className="fas fa-dog navicon"></i> Animals</Link></li> 
                         <li><Link to={"/cars"}><i className="fas fa-car navicon"></i> Cars</Link></li>
                         <li><Link to={"/pugs"}><i className="fas fa-paw navicon"></i>Pugs </Link></li>
+                        <li><Link to={"/cats"}><i class="fas fa-cat navicon"></i>Cats </Link></li>
                         <li><Link to={"/others"}><i className="fas fa-globe-americas navicon"></i> Others </Link></li>
                     
                     </ul>
@@ -73,6 +74,7 @@ const Header = (props) => {
                         <li><Link to={"/animals"}><i className="fas fa-dog navicon"></i> </Link></li>
                         <li><Link to={"/cars"}><i className="fas fa-car navicon"></i> </Link></li>
                         <li><Link to={"/pugs"}><i className="fas fa-paw navicon"></i> </Link></li>
+                        <li><Link to={"/cats"}><i class="fas fa-cat navicon"></i></Link></li>
                         <li><Link to={"/Others"}><i className="fas fa-globe-americas navicon"></i></Link></li>
                     </ul>
                 </nav>

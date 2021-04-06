@@ -2,14 +2,25 @@ import React, { useEffect, useState } from 'react';
 import "./photo.css";
 import "../../services/GalleryApi";
 import GetPhotosbyquery from '../../services/GalleryApi';
+import MolalPicture from "../ModalPicture/ModalPicture"
+import ModalPicture from '../ModalPicture/ModalPicture';
 
 
 
-const Photos = ( {query, title, HeaderOpen }    ) => {
+const Photos = ( {query, title, HeaderOpen, search = false }    ) => {
 
 
   const [Posts, SetPosts] = useState([])
-  const [errors, SetErros] = useState(false)
+  const [errors, SetErros] = useState(false) 
+  const [modalconfig, SetModalconfig] = useState({
+    isOpen: false,
+    title:null,
+    description: null,
+    tags:[],
+    src:null,
+  })
+  
+
   
   async function PushImages(){
     
@@ -17,19 +28,23 @@ const Photos = ( {query, title, HeaderOpen }    ) => {
 
      if(Response.total > 0){
        SetErros(false)
-        const copyState = [...Posts];
+        const copyState = [];
+        
         Response.results.forEach(e => {
           copyState.push({
             id: e.id,
             alt_description: e.alt_description,
             description: e.description,
-            url: e.urls.regular
+            url: e.urls.regular,
+            tags: e.tags,
+
+
   
           })
   
         })
   
-        SetPosts(copyState)
+         SetPosts(copyState)
      }else{
         SetErros(true)
 
@@ -42,24 +57,55 @@ const Photos = ( {query, title, HeaderOpen }    ) => {
 
 
 
+  function OpenModal(title, src, description, tags){
+      SetModalconfig({
+          isOpen: true,
+          description,
+          tags,
+          src,
+          title
+      })
+
+      
+  }
+
+  function ChangeModalStateOnPhoto(){
+      SetModalconfig({
+        isOpen: false,
+        title:null,
+        description: null,
+        tags:[],
+        src:null,
+      })
+  }
+
 
   useEffect(() => {
       const a = async () => await PushImages()  
       a()
 
-  }, [])
+  }, [query])
 
     return (
      
         <div className="contatiner-gallery" style={
-          HeaderOpen ? {width: "80%", left: "18%"} : {width: "80%", left: "8%"}
+          HeaderOpen ? {width: "80%", left: "18%"} : {width: "90%", left: "8%"}
         }>
-         {console.log(HeaderOpen)} 
+
+          
+
            <h1 className="title"> <i className="fas fa-grip-lines-vertical"></i> {title}</h1>
+
+
             {
               Posts.length > 0  ? 
               Posts.map((e,i) => {
-                 return <img className="imagesgallery" key={i} src={e.url} alt={e.alt_description} />
+                       
+                 return (
+                  <div onClick={() => OpenModal(title, e.url, e.description, e.tags)} description={"Description: "  +  (e.description ? e.description : "Sem detalhes no momento")} key={i} id={i} className="images">
+                    <img  draggable={false} className="imagesgallery" key={i} src={e.url}  />
+                  </div>
+                 )
 
 
               })
@@ -102,6 +148,7 @@ const Photos = ( {query, title, HeaderOpen }    ) => {
             
 
             }
+            <ModalPicture ChangeModalStateOnPhoto={ChangeModalStateOnPhoto} tags={modalconfig.tags} isOpen={modalconfig.isOpen} description={modalconfig.description} title={modalconfig.title} src={modalconfig.src}/>
         </div>
 
   )
